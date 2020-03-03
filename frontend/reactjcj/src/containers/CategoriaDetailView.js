@@ -36,7 +36,7 @@ class CategoriaDetail extends React.Component {
             <div> 
                 <h3>*Categoria*</h3>
                 <Card title={this.state.categoria.nombre_categoria}>
-                    <h4>Descripcion: {this.state.categoria.nombre_categoria}</h4>
+                    <h4>Nombre Categoria: {this.state.categoria.nombre_categoria}</h4>
                 </Card>
                 <CustomForm 
                     requestType = "put"

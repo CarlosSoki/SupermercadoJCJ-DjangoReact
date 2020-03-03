@@ -19,7 +19,7 @@ const Productos = (props) => {
         onChange: page => {
             console.log(page);
         },
-        pageSize: 4,
+        pageSize: 5,
         }}
         dataSource={props.data}
         renderItem={item => (
@@ -45,14 +45,15 @@ const Productos = (props) => {
         <Card>
           <List.Item.Meta
             avatar={<Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSrSn7V_n8HA7nqbOWEgGeud3nLIChHVUQX85aMDN1Ewxjzxm9V" />}
-            title={<a href={`/productos/${item.id}`}>{item.nombre}</a>}
+            title={<a href={`/productos/${item.id}`}>({item.id}) {item.nombre}</a>}
             description={item.descripcion}
             />  
-            <h4>Categoria: ({item.id_categoria})</h4>
-            <h4>Precio: {item.precio_producto.precio}$</h4>
-            
+            <h4>Producto: "{item.nombre}" : ({item.id}) </h4>
+            <h4>Categoria: "{item.id_categoria.nombre_categoria}" ({item.id_categoria.id})</h4>
+            <h4>Precio: {item.precio_producto.precio} $</h4>
         </Card>
         </List.Item>
+        
         )}
     />
     )

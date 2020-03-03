@@ -1,20 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 
-import Productos from '../components/Productos';
-import CustomForm from '../components/FormProductos';
+import Precio from '../components/Precio';
+import CustomForm from '../components/FormPrecio';
 
-class ProductosList extends React.Component {
+class PrecioList extends React.Component {
 
     state = {
-        productos: []
+        precio: []
     }
 
     componentDidMount(){
-        axios.get("http://localhost:8000/supermercado/productoaux/")
+        axios.get("http://localhost:8000/supermercado/precioaux/")
             .then(res => {
                 this.setState({
-                    productos: res.data
+                    precio: res.data
                 });
                 console.log(res.data);
             })
@@ -23,16 +23,16 @@ class ProductosList extends React.Component {
     render(){
         return(
             <div>
-                <Productos data={this.state.productos} />
+                <Precio data={this.state.precio} />
                 <br/>
-                <h2>Crear un "Producto"</h2>
+                <h2>Crear un "Precio"</h2>
                 <CustomForm 
                     requestType="post"
-                    productoID={null}
+                    precioID={null}
                     btnText="Create"/>
             </div>
         )
     }
 }
 
-export default ProductosList;
+export default PrecioList;

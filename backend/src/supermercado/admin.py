@@ -43,7 +43,7 @@ class PrecioAdmin(admin.ModelAdmin):
     list_display = ('id','id_producto','id_producto_id', 'fecha_hora', 'precio')
     list_filter = ('id_producto_id',)
     #search_fields = ('id_producto',)
-    ordering = ('id_producto','fecha_hora',)
+    ordering = ('id_producto','-fecha_hora',)
 
 admin.site.register(Precio, PrecioAdmin)
 #########################################################################

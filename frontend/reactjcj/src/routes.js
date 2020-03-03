@@ -7,8 +7,11 @@ import SucursalesDetail from './containers/SucursalesDetailView';
 import ProductosList from './containers/ProductosListView';
 import ProductosDetail from './containers/ProductosDetailView';
 
-import CategoriaList from './containers/CategoriaListView'
+import CategoriaList from './containers/CategoriaListView';
 import CategoriaDetail from './containers/CategoriaDetailView';
+
+import PrecioListView from './containers/PrecioListView';
+import PrecioDetailView from './containers/PrecioDetailView';
 
 const BaseRouter = () => (
     <div> 
@@ -20,6 +23,9 @@ const BaseRouter = () => (
 
         <Route exact path = '/categoria' component={CategoriaList}/>
         <Route exact path = '/categoria/:categoriaID' component={CategoriaDetail}/>
+
+        <Route exact path = '/precio' component={PrecioListView}/>
+        <Route exact path = '/precio/:precioID' component={PrecioDetailView}/>
     </div>
 
 );

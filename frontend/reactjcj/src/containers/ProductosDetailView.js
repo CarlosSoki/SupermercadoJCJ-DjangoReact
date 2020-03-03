@@ -37,7 +37,7 @@ class ProductosDetail extends React.Component {
                 <h3>*Producto*</h3>
                 <Card title={this.state.productos.nombre}>
                     <h4>Descripcion: {this.state.productos.descripcion}</h4>
-                    <h4>Categoria: {this.state.productos.id_categoria}</h4>
+                    <h4>Categoria: ({this.state.productos.id_categoria})</h4>
                 </Card>
                 <CustomForm 
                     requestType = "put"

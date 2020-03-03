@@ -51,7 +51,7 @@ class CustomForm extends React.Component{
               <Input name = "descripcion" placeholder="Ingrese alguna descripcion ..." />
             </FormItem>
 
-            <FormItem label="id_categoria">
+            <FormItem label="Id_categoria">
               <Input name = "id_categoria" placeholder="Ingrese alguna Categoria ..." />
             </FormItem>
 
