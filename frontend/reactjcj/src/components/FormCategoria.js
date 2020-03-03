@@ -21,7 +21,7 @@ class CustomForm extends React.Component{
           .catch(error => console.err(error));
          
       case 'put':  //editarlo
-          return axios.put(`http://localhost:8000/supermercado/categoria/${productosID}/`,{
+          return axios.put(`http://localhost:8000/supermercado/categoria/${categoriaID}/`,{
             nombre_categoria: nombre_categoria,
           })
           .then(res => console.log(res))
@@ -38,7 +38,7 @@ class CustomForm extends React.Component{
               this.props.requestType,
               this.props.categoriaID )}>
             <FormItem label="Nombre Categoria">
-              <Input name = "nombre" placeholder="Ingrese el Nombre Categoria ..." />
+              <Input name = "nombre_categoria" placeholder="Ingrese el Nombre Categoria ..." />
             </FormItem>
 
             <FormItem>
