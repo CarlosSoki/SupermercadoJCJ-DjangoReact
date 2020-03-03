@@ -31,6 +31,7 @@ const CustomLayout = (props) => {
                 <Breadcrumb.Item><Link to="/productos">Productos</Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to="/categoria">Categorias</Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to="/precio">Precios</Link></Breadcrumb.Item>
+                <Breadcrumb.Item><Link to="/inventario">Inventario</Link></Breadcrumb.Item>
                 <Breadcrumb.Item><Link to=""></Link></Breadcrumb.Item>
             </Breadcrumb>
                 <div style={{ background: '#E7EFF9', padding: 30, minHeight: 280 }}>

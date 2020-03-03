@@ -34,7 +34,7 @@ class InventarioAdmin(admin.ModelAdmin):
     list_display = ('id','id_sucursal_id','id_sucursal','id_producto_id','id_producto','unidades_ex')
     list_filter = ('id_sucursal','id_producto')
     #search_fields = ('id_sucursal',)
-    ordering = ('id',)
+    ordering = ('id_sucursal_id','id_producto_id')
 
 admin.site.register(Inventario, InventarioAdmin)
 #########################################################################

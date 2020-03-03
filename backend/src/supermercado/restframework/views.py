@@ -20,6 +20,7 @@ from .serializers import PedidoSerializer
 
 from .serializers import PrecioAux2Serializer
 from .serializers import ProductoAuxSerializer
+from .serializers import InventarioAuxSerializer
 
 class SucursalesView(viewsets.ModelViewSet):
     queryset = Sucursales.objects.all()
@@ -34,7 +35,7 @@ class CategoriaView(viewsets.ModelViewSet):
     serializer_class = CategoriaSerializer    
 
 class InventarioView(viewsets.ModelViewSet):
-    queryset = Inventario.objects.all()
+    queryset = Inventario.objects.order_by('-id_sucursal')
     serializer_class = InventarioSerializer
 
 class PrecioView(viewsets.ModelViewSet):
@@ -66,3 +67,7 @@ class PrecioAux2View(viewsets.ModelViewSet):
 class ProductoAuxView(viewsets.ModelViewSet):
     queryset = Producto.objects.all()
     serializer_class = ProductoAuxSerializer
+
+class InventarioAuxView(viewsets.ModelViewSet):
+    queryset = Inventario.objects.order_by('-id_sucursal')
+    serializer_class = InventarioAuxSerializer

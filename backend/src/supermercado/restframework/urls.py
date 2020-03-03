@@ -14,7 +14,8 @@ router.register('supermercado/detailscarrito', views.DetailsCarritoView)
 router.register('supermercado/pedido', views.PedidoView)
 
 router.register('supermercado/precioaux', views.PrecioAux2View)
-router.register('supermercado/productoaux', views.ProductoAuxView) #Es el producto simple
+router.register('supermercado/productoaux', views.ProductoAuxView) 
+router.register('supermercado/inventarioaux', views.InventarioAuxView) 
 
 urlpatterns = [
     path('', include(router.urls))
