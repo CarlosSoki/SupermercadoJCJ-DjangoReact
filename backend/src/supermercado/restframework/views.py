@@ -18,9 +18,14 @@ from .serializers import UserDetailsSerializer
 from .serializers import DetailsCarritoSerializer
 from .serializers import PedidoSerializer
 
+
 class SucursalesView(viewsets.ModelViewSet):
     queryset = Sucursales.objects.all()
     serializer_class = SucursalesSerializer    
+
+class SucursalesView(viewsets.ModelViewSet):
+    queryset = Sucursales.objects.filter(on_off = True) 
+    serializer_class = SucursalesSerializer  
 
 class CategoriaView(viewsets.ModelViewSet):
     queryset = Categoria.objects.all()

@@ -44,19 +44,19 @@ class CustomForm extends React.Component{
               this.props.requestType,
               this.props.productosID )}>
             <FormItem label="Nombre">
-              <Input name = "nombre" placeholder="Enter some sucursal ..." />
+              <Input name = "nombre" placeholder="Ingrese algun producto ..." />
             </FormItem>
 
             <FormItem label="Descripcion">
-              <Input name = "descripcion" placeholder="Enter some dirección ..." />
+              <Input name = "descripcion" placeholder="Ingrese alguna descripcion ..." />
             </FormItem>
 
             <FormItem label="id_categoria">
-              <Input name = "id_categoria" placeholder="Enter some dirección ..." />
+              <Input name = "id_categoria" placeholder="Ingrese alguna Categoria ..." />
             </FormItem>
 
             <FormItem>
-          <Button type="primary" htmlType="submit" >{this.props.btnText}</Button>
+              <Button type="primary" htmlType="submit" >{this.props.btnText}</Button>
             </FormItem>
 
           </Form>

@@ -31,18 +31,20 @@ class PrecioSerializer(serializers.ModelSerializer):
         fields = ['id','url', 'id_producto', 'fecha_hora', 'precio']
 #####################################################################################
 class PrecioAuxSerializer(serializers.ModelSerializer): 
-
     class Meta: 
         model = Precio
-        fields = ['fecha_hora', 'precio']
+        fields = ['precio', 'fecha_hora']
 
 class ProductoSerializer(serializers.ModelSerializer): 
-    #precio_producto = PrecioAuxSerializer(many=True)
+    precio_producto = serializers.SerializerMethodField()
     class Meta: 
         model = Producto
-        fields = ['id','url', 'nombre', 'descripcion', 'imagen', 'id_categoria']
+        fields = ['id','url', 'nombre', 'descripcion', 'imagen', 'id_categoria','precio_producto']
         #depth = 1
-        
+    def get_precio_producto(self, producto): 
+        precio = Precio.objects.filter(id_producto=producto).last()
+        serializer = PrecioAuxSerializer(instance=precio)
+        return serializer.data 
 #####################################################################################
 class UserDetailsSerializer(serializers.ModelSerializer):
     class Meta: 

@@ -33,14 +33,19 @@ class ProductosDetail extends React.Component {
 
     render(){
         return(
-            <div>
+            <div> 
+                <h3>*Producto*</h3>
                 <Card title={this.state.productos.nombre}>
-                    <p>{this.state.productos.descripcion}</p>
+                    <h4>Descripcion: {this.state.productos.descripcion}</h4>
+                    <h4>Categoria: {this.state.productos.id_categoria}</h4>
                 </Card>
                 <CustomForm 
                     requestType = "put"
                     productosID= {this.props.match.params.productosID} 
-                    btnText="Update"/>  
+                    btnText="Actualizar"/>  
+                <form onSubmit={this.handleDelete}>
+                    <Button type="danger" htmlType= "submit">Eliminar</Button>
+                </form>
             </div>
             
         )

@@ -33,10 +33,11 @@ class SucursalesDetail extends React.Component {
     render(){
         return(
             <div>
+                <h3>*Sucursal*</h3>
                 <Card title={this.state.sucursales.sucursal}>
-                    <p>{this.state.sucursales.direccion}</p>
-                    <p>{this.state.sucursales.telefono}</p>
-                    <p>{this.state.sucursales.mapa}</p>
+                    <p>Direccion: {this.state.sucursales.direccion}</p>
+                    <p>Telef: {this.state.sucursales.telefono}</p>
+                    <p>Google Map: {this.state.sucursales.mapa}</p>
                 </Card>
                 <CustomForm 
                     requestType = "put"

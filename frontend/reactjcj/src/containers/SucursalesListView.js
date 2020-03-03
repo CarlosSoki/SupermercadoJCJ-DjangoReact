@@ -29,7 +29,7 @@ class SucursalesList extends React.Component {
                 <CustomForm 
                     requestType="post"
                     sucursalesID={null}
-                    btnText="Create"/>
+                    btnText="Crear"/>
             </div>
         )
     }

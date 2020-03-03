@@ -32,7 +32,7 @@ class Producto(models.Model):  #lo segundo crear el modelo de la tabla
     nombre = models.CharField(unique=True, blank=False, max_length=50, verbose_name='Nombre:', help_text='Inglese el Nombre del producto')
     descripcion = models.TextField(blank=True, max_length=100, verbose_name='Descripcion:', help_text='Ingrese la Descripción del prodcuto')
     imagen = models.ImageField(upload_to='image_produc', blank=True, default = "image_produc/default.jpg", verbose_name='Imagen Producto:', help_text='Ingrese la imagen del prodcuto')
-    id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null = True,  related_name='producto_categoria', verbose_name='Categoria Producto:', help_text='Ingrese la categoria del producto')
+    id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null = False,  related_name='producto_categoria', verbose_name='Categoria Producto:', help_text='Ingrese la categoria del producto')
     
     def __str__(self):
         return self.nombre #, self.precio, self.descripcion

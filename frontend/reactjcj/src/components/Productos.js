@@ -2,13 +2,13 @@ import React from 'react';
 import { List, Avatar, Icon } from 'antd';
 import { Card } from 'antd'
 
+
 const IconText = ({ type, text }) => (
   <span>
     <Icon type={type} style={{ marginRight: 8 }} />
     {text}
   </span>
 );
-
 
 const Productos = (props) => {
     return(
@@ -19,7 +19,7 @@ const Productos = (props) => {
         onChange: page => {
             console.log(page);
         },
-        pageSize: 3,
+        pageSize: 4,
         }}
         dataSource={props.data}
         renderItem={item => (
@@ -49,6 +49,7 @@ const Productos = (props) => {
             description={item.descripcion}
             />  
             <h4>Categoria: ({item.id_categoria})</h4>
+            <h4>Precio: {item.precio_producto.precio}$</h4>
             
         </Card>
         </List.Item>

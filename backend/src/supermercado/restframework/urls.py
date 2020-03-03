@@ -12,6 +12,8 @@ router.register('supermercado/userdetails', views.UserDetailsView)
 router.register('supermercado/detailscarrito', views.DetailsCarritoView)
 router.register('supermercado/pedido', views.PedidoView)
 
+
+
 urlpatterns = [
     path('', include(router.urls))
 ]

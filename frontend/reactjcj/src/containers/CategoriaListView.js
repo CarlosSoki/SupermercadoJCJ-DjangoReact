@@ -1,20 +1,20 @@
 import React from 'react';
 import axios from 'axios';
 
-import Productos from '../components/Productos';
-import CustomForm from '../components/FormProductos';
+import Categoria from '../components/Categoria';
+import CustomForm from '../components/FormCategoria';
 
-class ProductosList extends React.Component {
+class CategoriaList extends React.Component {
 
     state = {
-        productos: []
+        categoria: []
     }
 
     componentDidMount(){
-        axios.get("http://localhost:8000/supermercado/producto/")
+        axios.get("http://localhost:8000/supermercado/categoria/")
             .then(res => {
                 this.setState({
-                    productos: res.data
+                    categoria: res.data
                 });
                 console.log(res.data);
             })
@@ -23,16 +23,16 @@ class ProductosList extends React.Component {
     render(){
         return(
             <div>
-                <Productos data={this.state.productos} />
+                <Categoria data={this.state.categoria} />
                 <br/>
-                <h2>Crear un "Producto"</h2>
+                <h2>Crear una "Categoria"</h2>
                 <CustomForm 
                     requestType="post"
-                    productoID={null}
+                    categoriaID={null}
                     btnText="Create"/>
             </div>
         )
     }
 }
 
-export default ProductosList;
+export default CategoriaList;
