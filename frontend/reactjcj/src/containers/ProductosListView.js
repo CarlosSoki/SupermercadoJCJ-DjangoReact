@@ -29,7 +29,7 @@ class ProductosList extends React.Component {
                 <CustomForm 
                     requestType="post"
                     productoID={null}
-                    btnText="Create"/>
+                    btnText="Crear"/>
             </div>
         )
     }

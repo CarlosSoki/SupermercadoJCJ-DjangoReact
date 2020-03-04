@@ -29,7 +29,7 @@ class CategoriaList extends React.Component {
                 <CustomForm 
                     requestType="post"
                     categoriaID={null}
-                    btnText="Create"/>
+                    btnText="Crear"/>
             </div>
         )
     }

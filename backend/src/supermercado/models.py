@@ -75,7 +75,7 @@ class UserDetails(models.Model):
         (INDEFINIDO, 'Indefinido'),
     ]
 
-    id_usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='userdetails_usuario', verbose_name='Usuario:', help_text='Ingrese el usuario')
+    id_usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='userdetails_usuario', unique=True, verbose_name='Usuario:', help_text='Ingrese el usuario')
     fecha_nacimiento = models.DateField(verbose_name='Fecha Nacimiento:', help_text='Ingrese la fecha de nacimiento')
     sexo = models.CharField(max_length=1, choices = SEXO_CHOICES, default = INDEFINIDO, verbose_name='Sexo:', help_text='Ingrese su sexo')
     cedula = models.CharField(blank=True, unique=False, max_length=20, verbose_name='Cedula:', help_text='Ingrese su numero de cedula')

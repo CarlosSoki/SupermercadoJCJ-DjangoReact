@@ -29,7 +29,7 @@ class PrecioList extends React.Component {
                 <CustomForm 
                     requestType="post"
                     precioID={null}
-                    btnText="Create"/>
+                    btnText="Crear"/>
             </div>
         )
     }

@@ -29,7 +29,7 @@ class InventarioList extends React.Component {
                 <CustomForm 
                     requestType="post"
                     inventarioID={null}
-                    btnText="Create"/>
+                    btnText="Crear"/>
             </div>
         )
     }

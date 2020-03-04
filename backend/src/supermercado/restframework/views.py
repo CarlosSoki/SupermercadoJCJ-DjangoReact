@@ -26,10 +26,6 @@ from .serializers import InventarioAuxSerializer
 from .serializers import UserDetailsAuxSerializer
 
 class SucursalesView(viewsets.ModelViewSet):
-    queryset = Sucursales.objects.all()
-    serializer_class = SucursalesSerializer    
-
-class SucursalesView(viewsets.ModelViewSet):
     queryset = Sucursales.objects.filter(on_off = True) 
     serializer_class = SucursalesSerializer  
 
