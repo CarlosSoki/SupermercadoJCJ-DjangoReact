@@ -33,7 +33,7 @@ const Categoria = (props) => {
                         height={100}
                         width={100}
                         alt="logo"
-                        src="https://lh3.googleusercontent.com/proxy/hmjtBamn_1TvwlrR4mrc4bQdnG5twcAD7JnBpQi0UPpLY5TblHrgQFtxC2-kbUZ5cHZbHp89eJMoyME80DZHKFPJBQ3h3R9VPrHc4PdaqXYnJP_qJKmnvSc_LNCgfOcWEJ8QO9LX9V0"
+                        src="https://lh3.googleusercontent.com/proxy/zARS5wRMggle_26gseP6RUNUg48OLd9bL-Z-zy-quC6lXoT-6JaMhKBOD0Tqbpp8k6b2uG0Y4jpEMzNHr1NjxZfcsj5XY7BK--Q6pub-0RmXA5slMwT1E7EuSDONKLzJCRC6x85iHbQ"
                     />  
                 </Card>
             }

@@ -44,7 +44,7 @@ const Inventario = (props) => {
 
         <Card>
           <List.Item.Meta
-            avatar={<Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSrSn7V_n8HA7nqbOWEgGeud3nLIChHVUQX85aMDN1Ewxjzxm9V" />}
+            avatar={<Avatar src="https://image.shutterstock.com/image-vector/new-icon-flat-design-260nw-242585101.jpg" />}
             title={<a href={`/inventario/${item.id}`}>ID({item.id}) {item.id_sucursal.sucursal} /Tiene/ {item.id_producto.nombre}</a>}
             
             />  

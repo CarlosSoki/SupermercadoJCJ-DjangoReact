@@ -33,7 +33,7 @@ const Productos = (props) => {
             extra={
                 <Card>
                     <img
-                        height={120}
+                        height={130}
                         width={100}
                         alt="logo"
                         src={item.imagen}
