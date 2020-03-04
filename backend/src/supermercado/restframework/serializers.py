@@ -7,6 +7,7 @@ from supermercado.models import Inventario
 from supermercado.models import UserDetails
 from supermercado.models import DetailsCarrito
 from supermercado.models import Pedido
+from django.contrib.auth.models import User 
 
 #####################################################################################
 class SucursalesSerializer(serializers.ModelSerializer): #Serializer de sucursales
@@ -44,6 +45,11 @@ class InventarioSerializer(serializers.ModelSerializer):  #serializer para inven
     class Meta: 
         model = Inventario
         fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto']
+#####################################################################################
+class UsersSerializer(serializers.ModelSerializer):
+    class Meta: 
+        model = User
+        fields = ['id','url', 'password','is_superuser', 'username', 'first_name', 'last_name','email', 'date_joined', 'last_login']
 #####################################################################################
 class UserDetailsSerializer(serializers.ModelSerializer): #serializer para detalles de usuario
     class Meta: 
@@ -84,3 +90,10 @@ class InventarioAuxSerializer(serializers.ModelSerializer):  #serializer inventa
         model = Inventario
         fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto']
         depth = 2
+#####################################################################################
+class UserDetailsAuxSerializer(serializers.ModelSerializer): #serializer para detalles de usuario View
+    id_usuario = UsersSerializer()
+    class Meta: 
+        model = UserDetails
+        fields = ['id','url', 'id_usuario', 'fecha_nacimiento', 'sexo', 'cedula', 'telefono']
+#####################################################################################

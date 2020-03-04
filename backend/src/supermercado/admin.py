@@ -1,6 +1,5 @@
 from django.contrib import admin
 from .models import Sucursales, Categoria, Producto, Inventario, Precio, UserDetails, DetailsCarrito, Pedido
-
 #########################################################################
 class SucursalesAdmin(admin.ModelAdmin):
 
@@ -73,3 +72,4 @@ class DetailsCarritoAdmin(admin.ModelAdmin):
     ordering = ('id',)
 
 admin.site.register(DetailsCarrito, DetailsCarritoAdmin)
+#########################################################################

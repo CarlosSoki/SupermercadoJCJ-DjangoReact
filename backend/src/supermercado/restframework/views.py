@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from rest_framework import viewsets
+from django.contrib.auth.models import User 
 from supermercado.models import Sucursales
 from supermercado.models import Categoria
 from supermercado.models import Producto
@@ -14,6 +15,7 @@ from .serializers import CategoriaSerializer
 from .serializers import InventarioSerializer
 from .serializers import PrecioSerializer
 from .serializers import ProductoSerializer
+from .serializers import UsersSerializer
 from .serializers import UserDetailsSerializer
 from .serializers import DetailsCarritoSerializer
 from .serializers import PedidoSerializer
@@ -21,6 +23,7 @@ from .serializers import PedidoSerializer
 from .serializers import PrecioAux2Serializer
 from .serializers import ProductoAuxSerializer
 from .serializers import InventarioAuxSerializer
+from .serializers import UserDetailsAuxSerializer
 
 class SucursalesView(viewsets.ModelViewSet):
     queryset = Sucursales.objects.all()
@@ -58,6 +61,9 @@ class PedidoView(viewsets.ModelViewSet):
     queryset = Pedido.objects.all()
     serializer_class = PedidoSerializer
 
+class UserView(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UsersSerializer
 
 
 class PrecioAux2View(viewsets.ModelViewSet):
@@ -71,3 +77,7 @@ class ProductoAuxView(viewsets.ModelViewSet):
 class InventarioAuxView(viewsets.ModelViewSet):
     queryset = Inventario.objects.order_by('-id_sucursal')
     serializer_class = InventarioAuxSerializer
+
+class UserDetailsAuxView(viewsets.ModelViewSet):
+    queryset = UserDetails.objects.all()
+    serializer_class = UserDetailsAuxSerializer

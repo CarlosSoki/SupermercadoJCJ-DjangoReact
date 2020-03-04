@@ -14,7 +14,7 @@ class CustomForm extends React.Component{
     const telefono = event.target.elements.telefono.value;
     const on_off = event.target.elements.on_off.value;
 
-    console.log(sucursal, direccion, mapa, telefono)
+    console.log(sucursal, direccion, mapa, telefono, on_off)
 
     switch ( requestType ){ 
         case 'post':  //agregarlo a la lista
@@ -70,7 +70,7 @@ render(){
           </FormItem>
 
           <FormItem>
-        <Button type="primary" htmlType="submit" >{this.props.btnText}</Button>
+            <Button type="primary" htmlType="submit" >{this.props.btnText}</Button>
           </FormItem>
 
         </Form>
