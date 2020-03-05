@@ -61,7 +61,7 @@ class CustomForm extends React.Component{
               <Input name = "cantidad" placeholder="Ingrese alguna cantiad ..." />
             </FormItem>
 
-            <FormItem label="Status Pedido[P] Carrito[C]">
+            <FormItem label="Status Pedido[P] Carrito[C] Fuera[P] Fuera[F]">
               <Input name = "status" placeholder="Ingrese el estatus ..." />
             </FormItem>
 

@@ -21,8 +21,8 @@ admin.site.register(Categoria, CategoriaAdmin)
 #########################################################################
 class ProductoAdmin(admin.ModelAdmin):
 
-    list_display = ('id','nombre','descripcion', 'imagen', 'id_categoria_id','id_categoria')
-    list_filter = ('id_categoria',)
+    list_display = ('id','nombre','descripcion', 'imagen', 'id_categoria_id','id_categoria','on_off')
+    list_filter = ('id_categoria','on_off')
     search_fields = ('nombre',)
     ordering = ('id',)
 
@@ -30,8 +30,8 @@ admin.site.register(Producto, ProductoAdmin)
 #########################################################################
 class InventarioAdmin(admin.ModelAdmin):
 
-    list_display = ('id','id_sucursal_id','id_sucursal','id_producto_id','id_producto','unidades_ex')
-    list_filter = ('id_sucursal','id_producto')
+    list_display = ('id','id_sucursal_id','id_sucursal','id_producto_id','id_producto','unidades_ex', 'on_off')
+    list_filter = ('id_sucursal','id_producto', 'on_off')
     #search_fields = ('id_sucursal',)
     ordering = ('id_sucursal_id','id_producto_id')
 

@@ -33,7 +33,8 @@ class Producto(models.Model):  #lo segundo crear el modelo de la tabla
     descripcion = models.TextField(blank=True, max_length=100, verbose_name='Descripcion:', help_text='Ingrese la Descripción del prodcuto')
     imagen = models.ImageField(upload_to='image_produc', blank=True, default = "image_produc/default.jpg", verbose_name='Imagen Producto:', help_text='Ingrese la imagen del prodcuto')
     id_categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, null = False,  related_name='producto_categoria', verbose_name='Categoria Producto:', help_text='Ingrese la categoria del producto')
-    
+    on_off = models.BooleanField(default=True, verbose_name='Producto Activo:',  help_text='Inglese el estado del producto')
+
     def __str__(self):
         return self.nombre #, self.precio, self.descripcion
 
@@ -46,6 +47,7 @@ class Inventario(models.Model):  #lo segundo crear el modelo de la tabla
     id_sucursal = models.ForeignKey(Sucursales, on_delete=models.CASCADE, related_name='inventario_sucursal', verbose_name='Sucursal:', help_text='Ingrese el nombre de la sucursal')
     id_producto = models.ForeignKey(Producto, on_delete=models.CASCADE, related_name='inventario_producto', verbose_name='Producto:', help_text='Ingrese el nombre del producto')
     unidades_ex = models.PositiveIntegerField(null=False, blank=False, verbose_name='Unidades Existentes:', help_text='Ingrese las unidades del producto')
+    on_off = models.BooleanField(default=True, verbose_name='Inventario Activo:',  help_text='Inglese el estado del inventario')
 
     class Meta:
         unique_together = (('id_sucursal','id_producto'),)
@@ -96,9 +98,11 @@ class Pedido(models.Model):
 class DetailsCarrito(models.Model):  #lo segundo crear el modelo de la tabla
     CARRITO = 'C'
     PEDIDO = 'P'
+    FUERA = 'F'
     STATUS_CHOICES = [
         (CARRITO, 'Carrito'),
         (PEDIDO, 'Pedido'),
+        (FUERA, 'Fuera'),
     ]
 
     id_usuario = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='detailscarrito_usuario',  verbose_name='Usuario:', help_text='Ingrese el usuario')

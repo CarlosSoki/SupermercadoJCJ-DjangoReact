@@ -36,7 +36,7 @@ class InventarioDetail extends React.Component {
             <div> 
                 <h3>*Inventario*</h3>
                 <Card title={this.state.inventario.id}>
-                    <h4>Sucursal ID: {this.state.inventario.id_sucursal}</h4>
+                    <h4>Sucursal ID: ({this.state.inventario.id_sucursal})</h4>
                     <h4>Producto ID: ({this.state.inventario.id_producto})</h4>
                     <h4>Unidades Existentes: ({this.state.inventario.unidades_ex})</h4>
                 </Card>

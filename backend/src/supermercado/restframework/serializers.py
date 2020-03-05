@@ -29,7 +29,7 @@ class ProductoSerializer(serializers.ModelSerializer):
     precio_producto = serializers.SerializerMethodField()
     class Meta: 
         model = Producto
-        fields = ['id','url', 'nombre', 'descripcion', 'imagen', 'id_categoria','precio_producto']
+        fields = ['id','url', 'nombre', 'descripcion', 'imagen', 'on_off' ,'id_categoria','precio_producto']
         #depth = 1
     def get_precio_producto(self, producto): 
         precio = Precio.objects.filter(id_producto=producto).last()
@@ -44,7 +44,7 @@ class PrecioSerializer(serializers.ModelSerializer): #serializer para precios de
 class InventarioSerializer(serializers.ModelSerializer):  #serializer para inventarios
     class Meta: 
         model = Inventario
-        fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto']
+        fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto', 'on_off']
 #####################################################################################
 class UsersSerializer(serializers.ModelSerializer):
     class Meta: 
@@ -78,7 +78,7 @@ class ProductoAuxSerializer(serializers.ModelSerializer):  #Para Producto View
     id_categoria = CategoriaSerializer()
     class Meta: 
         model = Producto
-        fields = ['id','url', 'nombre', 'descripcion', 'imagen', 'id_categoria','precio_producto']
+        fields = ['id','url', 'nombre', 'descripcion', 'imagen', 'on_off', 'id_categoria','precio_producto']
         #depth = 1
     def get_precio_producto(self, producto): 
         precio = Precio.objects.filter(id_producto=producto).last()
@@ -89,7 +89,7 @@ class InventarioAuxSerializer(serializers.ModelSerializer):  #serializer inventa
     id_producto = ProductoAuxSerializer()
     class Meta:
         model = Inventario
-        fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto']
+        fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto', 'on_off']
         depth = 2
 #####################################################################################
 class UserDetailsAuxSerializer(serializers.ModelSerializer): #serializer para detalles de usuario View

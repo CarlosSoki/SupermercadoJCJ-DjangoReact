@@ -25,6 +25,9 @@ import UserDetailDetail from './containers/UserDetailDetailView';
 import CarritoDetailList from './containers/CarritoDetailListView';
 import CarritoDetailsDetail from './containers/CarritoDetailsDetailView';
 
+import PedidoDetailList from './containers/PedidoListView';
+import PedidoDetailDetail from './containers/PedidoDetailView';
+
 const BaseRouter = () => (
     <div> 
         <Route exact path = '/sucursales' component={SucursalesList}/>
@@ -50,6 +53,9 @@ const BaseRouter = () => (
 
         <Route exact path = '/carritodetail' component={CarritoDetailList}/>
         <Route exact path = '/carritodetail/:carritodetailID' component={CarritoDetailsDetail}/>
+
+        <Route exact path = '/pedido' component={PedidoDetailList}/>
+        <Route exact path = '/pedido/:pedidoID' component={PedidoDetailDetail}/>
     </div>
 
 );

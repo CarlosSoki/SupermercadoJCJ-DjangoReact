@@ -36,7 +36,7 @@ class CategoriaView(viewsets.ModelViewSet):
     serializer_class = CategoriaSerializer    
 
 class InventarioView(viewsets.ModelViewSet):
-    queryset = Inventario.objects.order_by('-id_sucursal')
+    queryset = Inventario.objects.filter(on_off = True).order_by('-id_sucursal')
     serializer_class = InventarioSerializer
 
 class PrecioView(viewsets.ModelViewSet):
@@ -44,7 +44,7 @@ class PrecioView(viewsets.ModelViewSet):
     serializer_class = PrecioSerializer
 
 class ProductoView(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
+    queryset = Producto.objects.filter(on_off = True).order_by('id')
     serializer_class = ProductoSerializer
 
 class UserDetailsView(viewsets.ModelViewSet):
@@ -52,7 +52,7 @@ class UserDetailsView(viewsets.ModelViewSet):
     serializer_class = UserDetailsSerializer
 
 class DetailsCarritoView(viewsets.ModelViewSet):
-    queryset = DetailsCarrito.objects.order_by('id_usuario', 'id_producto')
+    queryset = DetailsCarrito.objects.order_by('id_usuario')
     serializer_class = DetailsCarritoSerializer
 
 class PedidoView(viewsets.ModelViewSet):
@@ -69,11 +69,11 @@ class PrecioAux2View(viewsets.ModelViewSet):
     serializer_class = PrecioAux2Serializer
 
 class ProductoAuxView(viewsets.ModelViewSet):
-    queryset = Producto.objects.all()
+    queryset = Producto.objects.filter(on_off = True).order_by('id')
     serializer_class = ProductoAuxSerializer
 
 class InventarioAuxView(viewsets.ModelViewSet):
-    queryset = Inventario.objects.order_by('-id_sucursal')
+    queryset = Inventario.objects.filter(on_off = True).order_by('-id_sucursal')
     serializer_class = InventarioAuxSerializer
 
 class UserDetailsAuxView(viewsets.ModelViewSet):

@@ -37,7 +37,7 @@ class CarritoDetailDetail extends React.Component {
                     <h4>Usuario ID: ({this.state.carritodetail.id_usuario})</h4>
                     <h4>Inventario ID: ({this.state.carritodetail.id_inventario})</h4>
                     <h4>Cantidad: {this.state.carritodetail.cantidad}</h4>
-                    <h4>Status: "{this.state.carritodetail.status} Pedido[P] Carrito[C]</h4>
+                    <h4>Status: "{this.state.carritodetail.status}" Pedido[P] Carrito[C] Fuera[F]</h4>
                     <h4>Pedido ID: ({this.state.carritodetail.id_pedido})</h4>
                 </Card>
                 <CustomForm 

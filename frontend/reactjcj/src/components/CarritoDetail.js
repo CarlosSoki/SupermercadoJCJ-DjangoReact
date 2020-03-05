@@ -19,7 +19,7 @@ const CarritoDetail = (props) => {
         onChange: page => {
             console.log(page);
         },
-        pageSize: 5,
+        pageSize: 6,
         }}
         dataSource={props.data}
         renderItem={item => (
@@ -42,13 +42,13 @@ const CarritoDetail = (props) => {
         <Card>
           <List.Item.Meta
             avatar={<Avatar src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ0mfcSWtdhiVyXGfsUgSYDKOyq7mlely3DfpVqjMzHmgq9m4Fd" />}
-            title={<a href={`/carritodetail/${item.id}`}>({item.id}) {item.id_usuario.username}</a>}
+            title={<a href={`/carritodetail/${item.id}`}>({item.id}) Usuario:" {item.id_usuario.username}"</a>}
             description={item.descripcion}
             />  
-            <h4>Usuario: ({item.id_usuario.username})"{item.id_usuario.username}" ID:({item.id_usuario.id}) Email: {item.id_usuario.email} </h4>
-            <h4>Inventario: ({item.id_inventario.id}) Sucursal: "{item.id_inventario.id_sucursal.sucursal}" Producto: "{item.id_inventario.id_producto.nombre}"</h4>
+            <h4>Usuario: "{item.id_usuario.username}" / ID:({item.id_usuario.id}) / Email: {item.id_usuario.email} </h4>
+            <h4>Inventario: ID Inv:({item.id_inventario.id}) / Sucursal: "{item.id_inventario.id_sucursal.sucursal}" / Producto: "{item.id_inventario.id_producto.nombre}"</h4>
             <h4>Precio: "{item.id_inventario.id_producto.nombre}" Cuesta  {item.id_inventario.id_producto.precio_producto.precio}$</h4>
-            <h4>Cantiad: {item.cantidad} UNID</h4>
+            <h4>Cantiad: {item.cantidad} Unid</h4>
             <h4>Status: "{item.status}" (Pedido[P] Carrito[C])</h4>
             <div>
                 <h4>ID Predido <b>{item.id_pedido ? (item.id_pedido.id) : '(X)'}</b></h4>

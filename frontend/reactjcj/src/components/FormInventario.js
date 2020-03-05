@@ -11,8 +11,9 @@ class CustomForm extends React.Component{
     const id_sucursal = event.target.elements.id_sucursal.value;
     const id_producto = event.target.elements.id_producto.value;
     const unidades_ex = event.target.elements.unidades_ex.value;
+    const on_off = event.target.elements.on_off.value;
 
-    console.log(unidades_ex, id_sucursal, id_producto)
+    console.log(unidades_ex, id_sucursal, id_producto, on_off)
     
     switch ( requestType ){ 
       case 'post':  //agregarlo a la lista
@@ -20,6 +21,7 @@ class CustomForm extends React.Component{
             unidades_ex: unidades_ex,
             id_sucursal: id_sucursal,
             id_producto: id_producto,
+            on_off: on_off,
           })
           .then(res => console.log(res))
           .catch(error => console.err(error));
@@ -29,6 +31,7 @@ class CustomForm extends React.Component{
             unidades_ex: unidades_ex,
             id_sucursal: id_sucursal,
             id_producto: id_producto,
+            on_off: on_off,
           })
           .then(res => console.log(res))
           .catch(error => console.err(error));
@@ -53,6 +56,10 @@ class CustomForm extends React.Component{
 
             <FormItem label="Unidades Existentes">
               <Input name = "unidades_ex" placeholder="Ingrese alguna Categoria ..." />
+            </FormItem>
+
+            <FormItem label="Activa (1 o True)   Inactiva (0 o false)">
+              <Input name = "on_off" placeholder="Ingrese el estado ..." />
             </FormItem>
 
             <FormItem>
