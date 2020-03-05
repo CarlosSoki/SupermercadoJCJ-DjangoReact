@@ -105,9 +105,11 @@ class DetailsCarrito(models.Model):  #lo segundo crear el modelo de la tabla
     id_inventario = models.ForeignKey(Inventario, on_delete=models.CASCADE, related_name='detailscarrito_inventario', verbose_name='Inventario:', help_text='Ingrese inventario que decea agregar al carrito')
     cantidad = models.PositiveIntegerField(null=False, blank=False, default=1, verbose_name='Cantidad:', help_text='Inglese la cantidad de productos')
     status = models.CharField(max_length=1, choices = STATUS_CHOICES, default = CARRITO, verbose_name='Status:', help_text='Ingrese el estado del prodcuto')
-    id_pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name='detailscarrito_pedido',null = True, blank=True, verbose_name='Pedido:', help_text='Ingrese el pedido') 
+    id_pedido = models.ForeignKey(Pedido, on_delete=models.CASCADE, related_name='detailscarrito_pedido', null = True, blank=True, unique=True, verbose_name='Pedido:', help_text='Ingrese el pedido') 
 
     class Meta:
+        unique_together = (('id_inventario','id_pedido'),)
+
         verbose_name = 'Detalle Carrito'
         verbose_name_plural = 'Detalles Carrito'
 #################################################################################################################

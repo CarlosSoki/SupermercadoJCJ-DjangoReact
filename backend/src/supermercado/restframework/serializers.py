@@ -86,7 +86,8 @@ class ProductoAuxSerializer(serializers.ModelSerializer):  #Para Producto View
         return serializer.data 
 #####################################################################################
 class InventarioAuxSerializer(serializers.ModelSerializer):  #serializer inventarios View
-    class Meta: 
+    id_producto = ProductoAuxSerializer()
+    class Meta:
         model = Inventario
         fields = ['id','url', 'unidades_ex', 'id_sucursal', 'id_producto']
         depth = 2
@@ -96,4 +97,18 @@ class UserDetailsAuxSerializer(serializers.ModelSerializer): #serializer para de
     class Meta: 
         model = UserDetails
         fields = ['id','url', 'id_usuario', 'fecha_nacimiento', 'sexo', 'cedula', 'telefono']
+#####################################################################################
+class DetailsCarritoAuxSerializer(serializers.ModelSerializer): #serializer para detalles carrito
+    id_inventario = InventarioAuxSerializer()
+    id_usuario = UsersSerializer()
+    id_pedido = PedidoSerializer()
+    class Meta: 
+        model = DetailsCarrito
+        fields = ['id','url', 'id_usuario', 'id_inventario', 'cantidad', 'status', 'id_pedido']
+#####################################################################################
+class PedidoAuxSerializer(serializers.ModelSerializer):  #serializer para pedidos
+    detailscarrito_pedido = DetailsCarritoAuxSerializer(many=True)
+    class Meta: 
+        model = Pedido
+        fields = ['id','url', 'precio_venta', 'fecha_venta', 'detailscarrito_pedido']
 #####################################################################################
